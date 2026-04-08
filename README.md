@@ -4,7 +4,7 @@
 
 A roguelike survival game where you play as a zombie fending off waves of enemies. Built for the browser with PixiJS and TypeScript.
 
-**[Play now](https://elumixor.github.io/Zombie-Must-Survive/)**
+**[Play now](https://elumixor.github.io/zombie-must-survive/)**
 
 ## Gameplay
 

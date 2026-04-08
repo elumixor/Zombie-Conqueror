@@ -3,7 +3,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
     plugins: [tsconfigPaths()],
-    base: "/Zombie-Must-Survive/",
+    base: "/zombie-must-survive/",
     build: {
         sourcemap: true,
         minify: false,
