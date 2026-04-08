@@ -182,4 +182,4 @@ export class Configurator {
         document.body.removeChild(a);
     }
 }
-export const configurator = new Configurator();
+export const configurator = import.meta.env.DEV ? new Configurator() : (undefined as unknown as Configurator);

@@ -81,9 +81,11 @@ export abstract class Handle<T = unknown, U = T> {
         if (!hasView) {
             if (!this.tabGroup) this.tabGroup = Class.name;
 
-            const { view, id } = configurator.addHandle(this, String(this.propertyKey), this.tabGroup, this.section);
-            this.view = view;
-            this.id = id;
+            if (import.meta.env.DEV) {
+                const { view, id } = configurator.addHandle(this, String(this.propertyKey), this.tabGroup, this.section);
+                this.view = view;
+                this.id = id;
+            }
         }
 
         // view.addChild(this);
@@ -105,7 +107,7 @@ export abstract class Handle<T = unknown, U = T> {
         this.updateView(value);
         this.created.emit({ instances: this.instances, value });
         viewChanged.subscribe((value) => this.onViewChanged(value));
-        resetRequested.subscribe(() => configurator.resetSingle(this.id));
+        if (import.meta.env.DEV) resetRequested.subscribe(() => configurator.resetSingle(this.id));
     }
 
     copy() {

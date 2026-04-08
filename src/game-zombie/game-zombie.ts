@@ -14,8 +14,7 @@ export class GameZombie extends Game {
     start() {
         logs("Starting the game");
 
-        // We will need to uncomment this later for PROD builds?
-        configurator.load(this.resources.get("config")!);
+        if (import.meta.env.DEV) configurator.load(this.resources.get("config")!);
 
         return this.changeLevel(this.mainLevel);
     }

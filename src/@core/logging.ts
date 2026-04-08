@@ -25,9 +25,7 @@ Reflect.defineProperty(globalThis, "log", {
 });
 
 Reflect.defineProperty(globalThis, "debug", {
-    // value: import.meta.env.DEV
-    // eslint-disable-next-line no-constant-condition, @typescript-eslint/no-unnecessary-condition
-    value: true
+    value: import.meta.env.DEV
         ? (() => {
               const fn = (...args: unknown[]) => {
                   // eslint-disable-next-line no-console
@@ -47,9 +45,7 @@ Reflect.defineProperty(globalThis, "debug", {
 });
 
 Reflect.defineProperty(globalThis, "logs", {
-    // value: import.meta.env.DEV
-    // eslint-disable-next-line no-constant-condition, @typescript-eslint/no-unnecessary-condition
-    value: true
+    value: import.meta.env.DEV
         ? (value: unknown, { duration = 2, color = "auto", key = -1 as string | number, useConsole = true } = {}) => {
               let div = document.getElementById("__debug-string");
               if (!div) {
